@@ -12,11 +12,16 @@
 <body>
     {% block content %}
     <div style="text-align: center;">
-        <h1>BIENVENIDO</h1>
-        <a ><button>Registrarse</button></a><br>
-        <a><button>Iniciar sesion</button></a><br>
-        <a><button>Volver</button></a><br>
+        <h1>BIENVENIDO a Learning with Shoes</h1>
+        <p>Aquí podras encontrar diferentes tipos de cursos, desde JavaScript, React y Ruby.</p>
+        <BR>
+        <h2>Inicie sesión ó creese una cuenta!</h2>
+        <a href="{% url "core:registrar" %}""><button>Registrarse</button></a><br>
+        <a href="{% url 'core:iniciar_sesion' %}"><button>Iniciar sesion</button></a><br>
+        
     </div>
     {% endblock content %}
+    <br>
+   
 </body>
 </html>

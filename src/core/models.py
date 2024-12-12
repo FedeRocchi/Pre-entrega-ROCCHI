@@ -1,9 +1,15 @@
 from django.db import models
 
 
-#class User_create(models.Model):
-#    nombre = models.CharField(max_lenght=20)
+class User_register(models.Model):
+    nombre = models.CharField(max_length=20)
+    email = models.EmailField()
+    dni = models.IntegerField(null=True, blank=True)
 
-#    def __str__(self):
-#        return self.nombre
-# Create your models here.
+    def __str__(self):
+        return f'{self.nombre} - {self.email} - {self.dni}'
+    
+
+    
+
+

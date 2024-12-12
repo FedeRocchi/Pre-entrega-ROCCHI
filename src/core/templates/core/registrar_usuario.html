@@ -1,16 +1,24 @@
+{% extends 'core/base.html' %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Register</title>
+    {% block title %}
+        <title>Library Register</title>
+    {% endblock title %}
+    
 </head>
 <body>
-   <form action="">
-   <label for="">
-        <input type="text" name="nombre"> Ingrese su nombre
-        <input type="text" name="nombre"> Ingrese su mail
-   </label>
-    </form>
+    {% block content %}
+        <h1>Registrarse</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{user.as_p}}
+            <button type="submit">Enviar</button>
+            <a href="{% url "core:index" %}">Ir a Menu</a>
+            <a href="{% url 'core:iniciar_sesion' %}">Iniciar Sesion</a>
+        </form>
+        {% endblock content %}
 </body>
 </html>
